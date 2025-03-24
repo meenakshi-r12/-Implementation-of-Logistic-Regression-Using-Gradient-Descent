@@ -17,10 +17,11 @@ To write a program to implement the the Logistic Regression Using Gradient Desce
 /*
 Program to implement the the Logistic Regression Using Gradient Descent.
 ```
-Developed by: 
-RegisterNumber:
+Developed by: Meenakshi.R
+RegisterNumber:212224220062
 ```
 */
+```
 import pandas as pd
 import numpy as np
 dataset = pd.read_csv('Placement_Data.csv')
@@ -61,7 +62,22 @@ def gradient_descent(theta, X, Y, alpha, num_iterations):
         gradient  = X.T.dot(h - y)/m
         theta -= alpha*gradient
     return theta
-  
+theta = gradient_descent(theta, X, y, alpha=0.01, num_iterations=1000)
+def predict (theta, X):
+    h = sigmoid(X.dot(theta))
+    y_pred = np.where(h >= 0.5, 1, 0)
+    return y_pred
+y_pred  = predict(theta, X)
+accuracy = np.mean(y_pred.flatten() == y)
+print("Accuracy:", accuracy)
+print(y_pred)
+xnew = np.array([[0, 87, 0, 95, 0, 2, 78, 2, 0, 0, 1, 0]])
+y_prednew = predict(theta, xnew)
+print(y_prednew)
+xnew = np.array([[0, 0, 0, 0, 0, 2, 8, 2, 0, 0, 1, 0 ]])
+y_prednew = predict(theta, xnew)
+print(y_prednew)
+```
 
 ## Output:
 ![logistic regression using gradient descent](sam.png)
