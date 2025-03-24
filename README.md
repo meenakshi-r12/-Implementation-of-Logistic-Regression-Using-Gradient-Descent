@@ -14,13 +14,13 @@ To write a program to implement the the Logistic Regression Using Gradient Desce
 4. 
 
 ## Program:
-```
 /*
 Program to implement the the Logistic Regression Using Gradient Descent.
-Developed by: 
-RegisterNumber:  
-*/
 ```
+Developed by: 
+RegisterNumber:
+```
+*/
 import pandas as pd
 import numpy as np
 dataset = pd.read_csv('Placement_Data.csv')
